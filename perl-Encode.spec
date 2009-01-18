@@ -13,30 +13,33 @@ Source:     http://www.cpan.org/modules/by-module//%{realname}-%{version}.tar.gz
 Url:        http://search.cpan.org/dist/%{realname}
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
-
+Requires: perl-devel
 
 
 
 %description
-This module implements China-based Chinese charset encodings. Encodings
-supported are as follows.
+The "Encode" module provides the interfaces between Perl's strings and
+the rest of the system.  Perl strings are sequences of characters.
 
-  Canonical   Alias		Description
-  --------------------------------------------------------------------
-  euc-cn      /\beuc.*cn$/i	EUC (Extended Unix Character)
-          /\bcn.*euc$/i
-              /\bGB[-_ ]?2312(?:\D.*$|$)/i (see below)
-  gb2312-raw			The raw (low-bit) GB2312 character map
-  gb12345-raw			Traditional chinese counterpart to 
-                GB2312 (raw)
-  iso-ir-165			GB2312 + GB6345 + GB8565 + additions
-  MacChineseSimp                GB2312 + Apple Additions
-  cp936				Code Page 936, also known as GBK 
-                (Extended GuoBiao)
-  hz				7-bit escaped GB2312 encoding
-  --------------------------------------------------------------------
+The repertoire of characters that Perl can represent is at least that
+defined by the Unicode Consortium. On most platforms the ordinal values
+of the characters (as returned by "ord(ch)") is the "Unicode codepoint"
+for the character (the exceptions are those platforms where the legacy
+encoding is some variant of EBCDIC rather than a super-set of ASCII -
+see perlebcdic).
 
-To find how to use this module in detail, see the Encode manpage.
+Traditionally, computer data has been moved around in 8-bit chunks often
+called "bytes". These chunks are also known as "octets" in networking
+standards. Perl is widely used to manipulate data of many types - not
+only strings of characters representing human or computer languages but
+also "binary" data being the machine's representation of numbers, pixels
+in an image - or just about anything.
+
+When Perl is processing "binary data", the programmer wants Perl to
+process "sequences of bytes". This is not a problem for Perl - as a byte
+has 256 possible values, it easily fits in Perl's much larger "logical
+character".
+
 
 %prep
 %setup -q -n %{realname}-%{version} 
@@ -51,6 +54,7 @@ make test
 %install
 rm -rf %buildroot
 %makeinstall_std
+rm -rf %buildroot/usr/bin
 
 %clean
 rm -rf %buildroot
@@ -60,8 +64,6 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-/usr/bin/enc2xs
-/usr/bin/piconv
 /usr/share/man/man1/enc2xs.1.lzma
 /usr/share/man/man1/piconv.1.lzma
 
