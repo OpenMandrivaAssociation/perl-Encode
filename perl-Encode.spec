@@ -1,6 +1,6 @@
 
 %define realname   Encode
-%define version    2.26
+%define version    2.27
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
@@ -9,7 +9,7 @@ Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
 Summary:    Character Encodings Handler
-Source:     http://www.cpan.org/modules/by-module//%{realname}-%{version}.tar.gz
+Source:     http://search.cpan.org/CPAN/authors/id/D/DA/DANKOGAI/%{realname}-%{version}.tar.gz
 Url:        http://search.cpan.org/dist/%{realname}
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: perl-devel
