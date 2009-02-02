@@ -1,6 +1,6 @@
 
 %define realname   Encode
-%define version    2.27
+%define version    2.29
 %define release    %mkrel 1
 
 Name:       perl-%{realname}
