@@ -1,21 +1,19 @@
+%define upstream_name    Encode
+%define upstream_version 2.35
 
-%define realname   Encode
-%define version    2.35
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Character Encodings Handler
-Source:     http://search.cpan.org/CPAN/authors/id/D/DA/DANKOGAI/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/D/DA/DANKOGAI/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl-devel
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 Requires: perl-devel
-
-
 
 %description
 The "Encode" module provides the interfaces between Perl's strings and
@@ -42,7 +40,7 @@ character".
 
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
