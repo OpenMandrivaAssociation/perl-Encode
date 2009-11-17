@@ -1,5 +1,5 @@
 %define upstream_name    Encode
-%define upstream_version 2.37
+%define upstream_version 2.38
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
