@@ -1,9 +1,9 @@
 %define upstream_name    Encode
-%define upstream_version 2.39
+%define upstream_version 2.40
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    Character Encodings Handler
 License:    GPL+ or Artistic
@@ -60,8 +60,7 @@ rm -rf %buildroot
 %files
 %defattr(-,root,root)
 %doc Changes README
+%{_mandir}/man1/enc2xs.1*
+%{_mandir}/man1/piconv.1*
 %{_mandir}/man3/*
 %perl_vendorlib/*
-/usr/share/man/man1/enc2xs.1.lzma
-/usr/share/man/man1/piconv.1.lzma
-
