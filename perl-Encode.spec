@@ -60,7 +60,5 @@ rm -rf %buildroot
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{_mandir}/man1/enc2xs.1*
-%{_mandir}/man1/piconv.1*
 %{_mandir}/man3/*
 %perl_vendorlib/*
