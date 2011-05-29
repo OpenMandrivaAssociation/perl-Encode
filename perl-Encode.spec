@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 Summary:    Character Encodings Handler
 License:    GPL+ or Artistic
@@ -52,7 +52,7 @@ make test
 %install
 rm -rf %buildroot
 %makeinstall_std
-rm -rf %buildroot/usr/bin
+rm -rf %buildroot/%{_bindir} %buildroot%{_mandir}/man1
 
 %clean
 rm -rf %buildroot
