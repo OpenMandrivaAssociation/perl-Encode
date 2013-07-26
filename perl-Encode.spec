@@ -1,15 +1,15 @@
 %define upstream_name    Encode
-%define upstream_version 2.43
+%define upstream_version 2.51
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:	3
+Version:    %perl_convert_version 2.51
+Release:	1
 
 Summary:    Character Encodings Handler
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://search.cpan.org/CPAN/authors/id/D/DA/DANKOGAI/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/authors/id/D/DA/DANKOGAI/Encode-2.51.tar.gz
 
 BuildRequires: perl-devel
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
@@ -156,4 +156,5 @@ rm -rf %buildroot
 
 * Sat Jan 17 2009 cpan2dist 2.26-1mdv
 - initial mdv release, generated with cpan2dist
+
 
