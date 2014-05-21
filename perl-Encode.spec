@@ -11,6 +11,7 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://search.cpan.org/CPAN/authors/id/D/DA/DANKOGAI/%{upstream_name}-%{upstream_version}.tar.gz
+Source100: %{name}.rpmlintrc
 
 BuildRequires: perl-devel
 Requires: perl-devel
