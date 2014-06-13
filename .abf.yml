@@ -3,5 +3,6 @@ removed_sources:
   Encode-2.51.tar.gz: 314e6b3841ba11902bbcd3632b5390a37990f5ce
   Encode-2.52.tar.gz: 7864e6d6bd5422bba64b0c6b26233598ba80788f
   Encode-2.55.tar.gz: f85aaebfb61a4d7522614349b20654c2e3653829
-sources:
   Encode-2.60.tar.gz: a387e262f2769cbb000b644655a7572953b05484
+sources:
+  Encode-2.62.tar.gz: ee6e7c8f6430383855d36789893866b4d904b131

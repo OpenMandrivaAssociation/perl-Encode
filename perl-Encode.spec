@@ -1,11 +1,12 @@
 %define upstream_name    Encode
-%define upstream_version 2.60
+%define upstream_version 2.62
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:    Character Encodings Handler
+
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
@@ -60,6 +61,7 @@ rm -rf %{buildroot}/%{_bindir} %{buildroot}%{_mandir}/man1
 %doc Changes README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
 
 
